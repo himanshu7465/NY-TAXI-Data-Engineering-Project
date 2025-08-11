@@ -1,12 +1,12 @@
 {
-	"name": "nyc_dataset_src",
+	"name": "nyc_raw_source_greater",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "nyc_web",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"p_month": {
+			"p_monthgreater": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "trip-data/green_tripdata_2023-0@{dataset().p_month}.parquet",
+					"value": "trip-data/green_tripdata_2023-@{dataset().p_monthgreater}.parquet",
 					"type": "Expression"
 				}
 			},
